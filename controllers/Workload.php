@@ -50,7 +50,7 @@ class Workload extends ZeCtrl
                 $this->workloads->updateOldTable($workload->status, $workload->position);
 
                 // recherche la position la plus élevé dans le nouveau tableau
-                $workloads = $this->workloads->order_by("position", "DESC")->get_all(array("status"=>$data["status"]));
+                $workloads = $this->workloads->order_by("position", "DESC")->all(array("status"=>$data["status"]));
 
                 $data["position"] = 0 ;
                 if ($workloads && count($workloads) > 0) {
@@ -61,7 +61,7 @@ class Workload extends ZeCtrl
             $this->workloads->update($data, $data["id"]);
         } else {
             // recherche la position la plus élevé dans le nouveau tableau
-            $workloads = $this->workloads->order_by("position", "DESC")->get_all(array("status"=>$data["status"]));
+            $workloads = $this->workloads->order_by("position", "DESC")->all(array("status"=>$data["status"]));
             echo json_encode($workloads);
 
             $data["position"] = 0 ;
@@ -108,7 +108,7 @@ class Workload extends ZeCtrl
 
 
         $this->load->model("zeapps_workload_workloads", "workloads");
-        $workloads = $this->workloads->order_by("position")->get_all();
+        $workloads = $this->workloads->order_by("position")->all();
 
         if ($workloads== false) {
             echo json_encode(array());
