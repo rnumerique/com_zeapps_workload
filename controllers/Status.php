@@ -4,7 +4,7 @@ class Status extends ZeCtrl
 {
     public function getAll() {
 
-        $this->load->model("zeapps_workload_statuses", "statuses");
+        $this->load->model("Zeapps_workload_statuses", "statuses");
         $statuses = $this->statuses->order_by("id")->all();
 
         if ($statuses== false) {
