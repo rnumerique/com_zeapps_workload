@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: nous
- * Date: 27/09/2016
- * Time: 10:41
- */
 class Workload extends ZeCtrl
 {
     public function form()
@@ -29,7 +23,7 @@ class Workload extends ZeCtrl
 
 
     public function save() {
-        $this->load->model("zeapps_workload_workloads", "workloads");
+        $this->load->model("Zeapps_workload_workloads", "workloads");
 
 
         // constitution du tableau
@@ -79,7 +73,7 @@ class Workload extends ZeCtrl
 
 
     public function delete($id) {
-        $this->load->model("zeapps_workload_workloads", "workloads");
+        $this->load->model("Zeapps_workload_workloads", "workloads");
 
         $workload = $this->workloads->get($id) ;
 
@@ -107,7 +101,7 @@ class Workload extends ZeCtrl
         }*/
 
 
-        $this->load->model("zeapps_workload_workloads", "workloads");
+        $this->load->model("Zeapps_workload_workloads", "workloads");
         $workloads = $this->workloads->order_by("position")->all();
 
         if ($workloads== false) {
@@ -122,14 +116,14 @@ class Workload extends ZeCtrl
 
 
     public function get($id) {
-        $this->load->model("zeapps_workload_workloads", "workloads");
+        $this->load->model("Zeapps_workload_workloads", "workloads");
         echo json_encode($this->workloads->get($id));
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public function save_position() {
-        $this->load->model("zeapps_workload_workloads", "workloads");
+        $this->load->model("Zeapps_workload_workloads", "workloads");
 
 
         // constitution du tableau
